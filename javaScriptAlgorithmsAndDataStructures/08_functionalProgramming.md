@@ -461,7 +461,8 @@ hold-the-door
 ```
 
 The syntax of the function inside the `forEach()` method was the sticking
-point.
+point. Also, I needed to add the `if (element.length > 0)` conditional because
+the test string with extra spaces gave me an array with empty string elements.
 
 [link15]: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/apply-functional-programming-to-convert-strings-to-url-slugs
 
@@ -501,6 +502,7 @@ false
 true
 false
 ```
+
 
 [link16]: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/functional-programming/use-the-every-method-to-check-that-every-element-in-an-array-meets-a-criteria
 

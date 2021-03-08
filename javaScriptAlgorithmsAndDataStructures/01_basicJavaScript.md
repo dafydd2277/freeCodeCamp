@@ -20,8 +20,8 @@ myValue = myArray.shift() // Remove the zero-index element from the array and
                           // assign it to myValue.
 ```
 
-Equality operator: ==
-Strict equality operator: ===
+- Equality operator: `==`
+- Strict equality operator: `===`
 
 ```
 if (condition) {
@@ -47,7 +47,7 @@ switch (num) {
 }
 ```
 
-JS "Objects" are Perl "hashes" or Python "dictionaries:" key:value pairs. Keys
+- JS "Objects" are Perl "hashes" or Python "dictionaries:" key:value pairs. Keys
 and their values can be added through dot or bracket notation. Keys are also
 called "properties" of the object.
 
@@ -62,9 +62,11 @@ delete object.key3;
 delete object['key2'];
 ```
 
-If your property is a variable, you need to use bracket notation. Dot notation
+- If your property is a variable, you need to use bracket notation. Dot notation
 won't work in that use case.
 
-return `<object>[<property>];``
+```
+return object[property];
+```
 
-`<object>.hasOwnProperty[<property>]; // returns true/false`
+- `object.hasOwnProperty[property]; // returns true/false`

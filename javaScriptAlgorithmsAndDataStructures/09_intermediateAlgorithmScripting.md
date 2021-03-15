@@ -626,6 +626,63 @@ in the first argument.
 In my browser at least, the third solution would throw an error for trying to
 do `str.split().map()`. My browser wouldn't recognize that the `.map()`
 function was working on an array created by the `split()` function. It would
-think I was trying to run an array function on a string, and throw an error.
+think I was trying to run an array function on the string `str`, and throw an
+error.
 
 [link11]: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/convert-html-entities
+
+## Sum All Odd Fibonacci Numbers
+- [link][link12]
+
+- Challenge:
+>Given a positive integer num, return the sum of all odd Fibonacci numbers that
+are less than or equal to num.
+
+>The first two numbers in the Fibonacci sequence are 1 and 1. Every additional
+number in the sequence is the sum of the two previous numbers. The first six
+numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8.
+
+>For example, sumFibs(10) should return 10 because all odd Fibonacci numbers
+less than or equal to 10 are 1, 1, 3, and 5.
+
+```
+function sumFibs(num) {
+ let prevNumber = 0;
+  let currNumber = 1;
+  let result = 0;
+  while (currNumber <= num) {
+    if (currNumber % 2 !== 0) {
+      result += currNumber;
+    }
+    currNumber += prevNumber;
+    prevNumber = currNumber - prevNumber;
+  }
+
+  return result;
+}
+
+console.log(sumFibs(1));
+console.log(sumFibs(1000));
+console.log(sumFibs(4000000));
+console.log(sumFibs(4));
+console.log(sumFibs(75024));
+console.log(sumFibs(75025));
+```
+
+returns
+
+```
+2
+1785
+4613732
+5
+60696
+135721
+```
+
+I punted on this one as well, and went with [solution 1][hints12]. Why is the
+result of `sumFibs(1)` equal to 2? Because the odd elements of the Fib sequence
+&lt;= 1 are 0, 1, 1.
+
+[link12]: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/sum-all-odd-fibonacci-numbers
+[hints12]: https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-sum-all-odd-fibonacci-numbers/16084
